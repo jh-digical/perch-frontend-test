@@ -7,7 +7,7 @@ npm i
 ```
 ### Start the hot-reload dev server
 ```
-npm run serve
+npm run dev
 ```
 
 ## Requirements
