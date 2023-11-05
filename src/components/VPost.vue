@@ -1,6 +1,4 @@
-<template>
-  TODO: display the post
-</template>
+<template>TODO: display the post</template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -10,8 +8,8 @@ export default defineComponent({
   props: {
     post: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>

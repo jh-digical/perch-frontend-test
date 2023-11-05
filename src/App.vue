@@ -7,24 +7,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 import VPost from './components/VPost.vue'
 import axios from 'axios'
 
 export default defineComponent({
   name: 'App',
   components: {
-    VPost
+    VPost,
   },
-  setup () {
-    const post = ref({});
+  setup() {
+    const post = ref({})
 
-    (async () => {
-      // Here is the url for getting posts. The post id is at the end of the url.
-      const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts/1')
-      console.log(data)
-      post.value = data
-    })()
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts/1')
+        console.log(data)
+        post.value = data
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+
+    onMounted(() => {
+      fetchData()
+    })
 
     const prevPost = () => {
       // TODO
@@ -37,8 +44,8 @@ export default defineComponent({
     return {
       post,
       prevPost,
-      nextPost
+      nextPost,
     }
-  }
+  },
 })
 </script>
