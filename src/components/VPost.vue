@@ -1,7 +1,7 @@
 <template>
-  <div class="v-post">
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.body }}</p>
+  <div class="p-8 rounded-lg min-h-[200px]">
+    <h1 class="text-3xl font-bold mb-4 capitalize">{{ post.title }}</h1>
+    <p class="text-lg">{{ post.body }}</p>
   </div>
 </template>
 
@@ -20,9 +20,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style scoped>
-.v-post {
-  margin-bottom: 20px;
-}
-</style>

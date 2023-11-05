@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#app {
+  min-height: 100vh;
+  padding: 0 0 20px;
+  overflow-x: hidden;
+
+  background: #41B883;
+  color: #fff;
+}
